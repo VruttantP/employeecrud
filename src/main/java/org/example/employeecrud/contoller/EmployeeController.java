@@ -3,22 +3,16 @@ package org.example.employeecrud.contoller;
 import org.example.employeecrud.model.Employee;
 import org.example.employeecrud.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-//@Configuration("classpath:dispatcher-servlet.xml")
 @RequestMapping("/restapi/employeeDetails")
 public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
-
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService=employeeService;
-    }
 
     @GetMapping
     public List<Employee> getEmployeeList() {

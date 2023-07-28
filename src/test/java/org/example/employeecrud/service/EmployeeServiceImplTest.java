@@ -6,18 +6,17 @@ import org.example.employeecrud.dao.EmployeeDAOImpl;
 import org.example.employeecrud.model.Employee;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class EmployeeServiceImplTest extends TestCase {
-    private EmployeeDAO employeeDAO;
-    private EmployeeService employeeService;
 
-    @BeforeEach
-    public void setUp() {
-        employeeDAO = new EmployeeDAOImpl();
-        employeeService = new EmployeeServiceImpl(employeeDAO);
-    }
+    @Autowired
+    private EmployeeDAO employeeDAO;
+
+    @Autowired
+    private EmployeeService employeeService;
 
     @Test
     public void testSaveAndGetEmployeeById() {

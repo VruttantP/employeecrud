@@ -1,24 +1,20 @@
 package org.example.employeecrud.contoller;
 
 import junit.framework.TestCase;
-import org.example.employeecrud.dao.EmployeeDAOImpl;
 import org.example.employeecrud.model.Employee;
 import org.example.employeecrud.service.EmployeeService;
-import org.example.employeecrud.service.EmployeeServiceImpl;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class EmployeeControllerTest extends TestCase {
-    private EmployeeService employeeService;
-    private EmployeeController employeeController;
 
-    @BeforeEach
-    public void setUp() {
-        employeeService = new EmployeeServiceImpl(new EmployeeDAOImpl());
-        employeeController = new EmployeeController(employeeService);
-    }
+    @Autowired
+    private EmployeeService employeeService;
+
+    @Autowired
+    private EmployeeController employeeController;
 
     @Test
     public void testSaveAndGetEmployeeById() {

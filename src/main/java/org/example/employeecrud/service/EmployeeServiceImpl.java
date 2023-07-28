@@ -1,7 +1,6 @@
 package org.example.employeecrud.service;
 
 import org.example.employeecrud.dao.EmployeeDAO;
-import org.example.employeecrud.dao.EmployeeDAOImpl;
 import org.example.employeecrud.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,10 +12,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Autowired
     private EmployeeDAO employeeDAO;
-
-    public EmployeeServiceImpl(EmployeeDAO employeeDAO) {
-        this.employeeDAO=employeeDAO;
-    }
 
     @Override
     public int saveEmployee(Employee employee) {
